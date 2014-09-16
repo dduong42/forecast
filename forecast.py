@@ -5,10 +5,7 @@ API_URL = 'http://api.openweathermap.org/data/2.5/forecast/daily'
 
 
 def formated_date_from_timestamp(timestamp):
-    """
-    Takes a timestamp in argument and returns
-    a date in this format: yyyy-mm-dd
-    """
+    "Takes a timestamp and returns a date in this format: yyyy-mm-dd"
 
     t = datetime.datetime.fromtimestamp(timestamp)
     return t.strftime('%Y-%m-%d')
@@ -55,7 +52,7 @@ class InformationGetter(object):
 
 
 def summarise_forecast(city):
-    "Returns the forecast summary of a city"
+    "Returns the forecast summary for a city"
 
     r = requests.get(API_URL, params={'q': city, 'units': 'imperial',
                      'cnt': 14})
